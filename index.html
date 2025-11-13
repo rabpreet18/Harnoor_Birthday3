@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Happy Birthday Hunny 🎂</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="A little birthday surprise for Hunny – cake, candles, Toronto skyline and music."
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Landing card -->
+  <div id="landing" class="overlay">
+    <div class="card">
+      <div class="card-header">
+        <h1>Happy Birthday Hunny 🎉</h1>
+      </div>
+      <div class="card-body">
+        <p>
+          This is just me being a part of your non-lowkey birthday this year hehe.
+          Thank you for being my exploring, bakchodi, music, deep talks and random
+          walks partner. Seeing you grow over this last one year has been truly
+          gratifying. Can't wait to see all the success, happiness and masti this
+          next year brings for you. I miss you &lt;3
+        </p>
+      </div>
+      <div class="card-footer">
+        <p class="signature">- love, Rabbo</p>
+      </div>
+
+      <div class="card-actions">
+        <button id="startButton" class="primary-button">
+          Start the celebration
+        </button>
+        <p class="note">
+          🔊 Turn your sound on – the music will play when you hit “Start”.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main scene -->
+  <div id="scene" class="scene hidden">
+    <div class="background-layer"></div>
+    <div class="gradient-overlay"></div>
+    <div class="stars"></div>
+
+    <div class="scene-content">
+      <!-- Left: Photos -->
+      <section class="photos-panel">
+        <h2>Our moments 📷</h2>
+        <p class="photos-hint">(You can replace these with p1–p4.jpg in the repo)</p>
+        <div class="photo-grid">
+          <div class="photo-frame tilt-left">
+            <img src="p1.jpg" alt="Memory 1" />
+          </div>
+          <div class="photo-frame tilt-right">
+            <img src="p2.jpg" alt="Memory 2" />
+          </div>
+          <div class="photo-frame tilt-left">
+            <img src="p3.jpg" alt="Memory 3" />
+          </div>
+          <div class="photo-frame tilt-right">
+            <img src="p4.jpg" alt="Memory 4" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Center: Cake -->
+      <section class="cake-panel">
+        <div class="cake-wrapper">
+          <div class="cake-plate"></div>
+          <div class="cake-body" id="cake">
+            <div class="cake-layer layer-bottom"></div>
+            <div class="cake-layer layer-middle"></div>
+            <div class="cake-layer layer-top"></div>
+
+            <div class="cake-drip drip-1"></div>
+            <div class="cake-drip drip-2"></div>
+            <div class="cake-drip drip-3"></div>
+
+            <div class="candles-row" id="candles">
+              <div class="candle" data-lit="true">
+                <div class="wick"></div>
+                <div class="flame"></div>
+              </div>
+              <div class="candle" data-lit="true">
+                <div class="wick"></div>
+                <div class="flame"></div>
+              </div>
+              <div class="candle" data-lit="true">
+                <div class="wick"></div>
+                <div class="flame"></div>
+              </div>
+              <div class="candle" data-lit="true">
+                <div class="wick"></div>
+                <div class="flame"></div>
+              </div>
+              <div class="candle" data-lit="true">
+                <div class="wick"></div>
+                <div class="flame"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Simple knife + slice visual -->
+          <div class="cake-knife" id="cakeKnife"></div>
+          <div class="cake-slice" id="cakeSlice"></div>
+        </div>
+
+        <div class="cake-controls">
+          <button id="lightCandlesBtn" class="secondary-button">
+            🔥 Light candles
+          </button>
+          <button id="blowCandlesBtn" class="secondary-button">
+            💨 Blow out candles
+          </button>
+          <button id="cutCakeBtn" class="primary-button">
+            🎂 Cut the cake
+          </button>
+        </div>
+      </section>
+
+      <!-- Right: Instructions -->
+      <section class="instructions-panel">
+        <h2>How to celebrate 🎈</h2>
+        <ol>
+          <li>Make sure your volume is on.</li>
+          <li>On the first screen, read the card and press <b>“Start the celebration”</b>.</li>
+          <li>
+            When the main scene appears, the music will start and the city lights will
+            glow in the background.
+          </li>
+          <li>
+            Use <b>“Light candles”</b> to turn the flames on, then take a moment and make a wish.
+          </li>
+          <li>
+            When you're ready, hit <b>“Blow out candles”</b> – the flames will go out and
+            confetti will pop to mark the wish.
+          </li>
+          <li>
+            Tap <b>“Cut the cake”</b> to slice the cake – a piece slides out and there’s a
+            bigger confetti burst to mark the cake cutting moment.
+          </li>
+          <li>
+            Scroll your eyes to the left to see all the photos (p1–p4). These are the
+            memories you’ve uploaded into the repo.
+          </li>
+        </ol>
+        <p class="tiny-note">
+          Tip: open this on a laptop, full-screen, and screen-share it if you’re doing a
+          virtual celebration.
+        </p>
+      </section>
+    </div>
+
+    <!-- Canvas for confetti -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <!-- Hidden YouTube player – only for music -->
+    <div id="yt-player" class="hidden"></div>
+
+    <!-- Music controls -->
+    <div class="music-controls">
+      <button id="muteMusicBtn" class="secondary-button small">🔇 Mute</button>
+      <button id="pauseMusicBtn" class="secondary-button small">⏸ Pause</button>
+    </div>
+  </div>
+
+  <!-- External scripts -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.0/dist/confetti.browser.min.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
